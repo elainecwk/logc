@@ -26,26 +26,19 @@ public class Calculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PRIMEIRONÚMERO = new javax.swing.JTextField();
-        SEGUNDONÚMERO = new javax.swing.JTextField();
-        operaçaõ = new javax.swing.JComboBox<>();
+        primeiro = new javax.swing.JTextField();
+        segundo = new javax.swing.JTextField();
+        operacao = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
-        RESULTADO = new javax.swing.JLabel();
+        resultado = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        operaçaõ.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+ ", "- ", "*", "/" }));
-        operaçaõ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                operaçaõActionPerformed(evt);
-            }
-        });
+        operacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "*", "/" }));
 
         jLabel1.setText("RESULTADO:");
-
-        RESULTADO.setText("jLabel2");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setText("CALCULADORA");
@@ -68,18 +61,18 @@ public class Calculadora extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(PRIMEIRONÚMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(primeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29)
-                                .addComponent(operaçaõ, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(operacao, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(26, 26, 26)
-                                .addComponent(SEGUNDONÚMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(segundo, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(188, 188, 188))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100)
-                        .addComponent(RESULTADO, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(168, 168, 168)
@@ -93,14 +86,14 @@ public class Calculadora extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PRIMEIRONÚMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SEGUNDONÚMERO, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(operaçaõ, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(primeiro, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(segundo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(operacao, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(RESULTADO, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                    .addComponent(resultado, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
@@ -108,20 +101,28 @@ public class Calculadora extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void operaçaõActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_operaçaõActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_operaçaõActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        double primeiroNumero = Double.parseDouble(this.PRIMEIRONÚMERO.getText());
-        double numeroDois = Double.parseDouble(this.SEGUNDONÚMERO.getText());
-        String op = this.operacao.getselectedItem().toString();
+       
+        double primeiroNumero = Double.parseDouble(this.primeiro.getText());
+        double numeroDois = Double.parseDouble(this.segundo.getText());
+        String op = this.operacao.getSelectedItem().toString();
+
+        double result = 0.0;         
+         
+        if (op == "+") {
+            result = primeiroNumero + numeroDois;
+        } else if (op == "-") {
+            result = primeiroNumero - numeroDois;
+        } else if (op == "*") {
+            result = primeiroNumero * numeroDois;
+        } else{
+            result = primeiroNumero / numeroDois;
+        }
         
+        this.resultado.setText(result + "");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -155,12 +156,12 @@ public class Calculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField PRIMEIRONÚMERO;
-    private javax.swing.JLabel RESULTADO;
-    private javax.swing.JTextField SEGUNDONÚMERO;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JComboBox<String> operaçaõ;
+    private javax.swing.JComboBox<String> operacao;
+    private javax.swing.JTextField primeiro;
+    private javax.swing.JLabel resultado;
+    private javax.swing.JTextField segundo;
     // End of variables declaration//GEN-END:variables
 }
