@@ -1,0 +1,18 @@
+import leia from "readline-sync" ;
+
+console.log( "INFORME O VALOR DA SUA DOAÇÂO");
+console.log("1 - r$10,00");
+console.log("2 - R$25,00");
+console.log("3 - R$50,00");
+console.log("4 - Outros valoes");
+
+var opcao = leia.question("INFORME A OPCAO");
+if(opcao === "1"){
+    console.log("Voce doou R$10,00! Muito Obrigado!!!")
+}else if(opcao ==="2"){
+    console.log("Voce doou R$25,00! Muito Obrigado!!!");
+}else if(opcao === "3"){
+    console.log("Voce Doou R$50,00" Muito Obrigado!!! );
+}else if(opcao === "4"){
+    console.log("Voce doou R$ Outros valores! Muito Obrigado!!!");
+}

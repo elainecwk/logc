@@ -51,17 +51,11 @@ public class AulaOperadores {
      boolean valor3 = false || true;
      boolean valor4 = false || false;
      boolean valor5 = 10 > 9 || 5 > 1;
-     boolean valor6 = ((10 > 9) && (5> 1)) || ((120 < 1) && 31;
+//     boolean valor6 = ((10 > 9) && (5> 1)) || ((120 < 1) && 31;
      
-    boolean negação = ! true;
-    boolean negação = !valor6;
-     {
-             
-   
-     
-     
-     
-   
+    boolean negacao = ! true;
+    boolean negacao2 = !valor5;
+    
     }
     
 }
